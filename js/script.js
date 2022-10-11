@@ -30,13 +30,19 @@ enroll.onclick = (e) => {
 }
 
 //sweepstake button
+let winner
 const pickWinner = document.getElementById("pickWinner-btn")
 pickWinner.onclick = () => {
-  let peopleList_noWinners = peopleList.filter( (i) => i.isWinner === false)  //filter out people who already won
-  if (peopleList_noWinners.length == 0) alert('Todas las personas registradas ya ganaron al menos una vez. Se debe registrar mas personas o resetear los ganadores')
-  let winner = getRandomInt(peopleList_noWinners.length)  //find winner based on: (math.random => array position)
-  peopleList[winner].isWinner = true  //flag winner
-  renderWinner(winner)  //display winner
+  let checkNoWinners = peopleList.some((i) => i.isWinner === false) //there must be at least one person.isWinner == false
+  if (checkNoWinners) {
+    do {
+      winner = getRandomInt(peopleList.length)  //find winner based on: (math.random => array position)
+    } while (peopleList[winner].isWinner); //skip person if already won
+    peopleList[winner].isWinner = true  //flag winner
+    renderWinner(winner)  //display winner
+  } else {
+    alert('Todas las personas registradas ya ganaron al menos una vez. Se debe registrar mas personas o resetear los ganadores')
+  }
 }
 
 //clear winners flag button
