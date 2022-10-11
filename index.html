@@ -68,32 +68,24 @@
           <p class="titleBig mb-1">Saliste Sorteado!</p>
           <p class="titleSmall mb-1">Nombre Apellido</p>
           <p class="my-0">Tel: </p>
-          <p class="my-0">email: </p>
+          <p class="my-0">Email: </p>
         </div>
       </div>
     </div>
     <!-- end of counter, sweepstake, winner display -->
 
-    <!-- display winners -->
-    <div class="row container-fluid text-center justify-content-center my-5">
+    <!-- display all winners -->
+    <div class="row text-center my-5 mx-1 setBorder">
       <div class="col-12 my-2">
-        <button class="btn btn-primary btn-lg" id="">Mostrar Ganadores</button>
+        <button class="btn btn-primary btn-lg" id="showWinner-btn">Mostrar Ganadores</button>
+        <button class="btn btn-primary btn-lg" id="clearFlags-btn">Reiniciar Ganadores</button>
       </div>
       <div class="col-12 my-4">
-        <div class="row justify-content-center d-none">
-          <div class="card col-2 mx-2">
-            <img src="./img/1.jpg" class="card-img-top" alt="Imagen de premio">
-            <div class="card-body text-center">
-              <h5 class="card-title">x Premio</h5>
-              <p class="card-text my-0">Nombre Ganador</p>
-              <p class="card-text my-0">Tel Ganador</p>
-              <p class="card-text my-0">Email Ganador</p>
-            </div>
-          </div>
+        <div class="row justify-content-center" id="winnerCardsDiv">
         </div>
       </div>
     </div>
-    <!-- end of diplay winners -->    
+    <!-- end of diplay all winners -->    
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
