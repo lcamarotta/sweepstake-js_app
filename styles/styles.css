@@ -1,0 +1,30 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.titleBig{
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+.titleSmall{
+  font-size: larger;
+  font-weight: bold;
+}
+
+.setBorder{
+  border: double black;
+  border-radius: 1rem;
+  padding: 5rem;
+}
+
+#inputPhone{
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+.card{
+  width: 18rem;
+  padding: 0;
+}
