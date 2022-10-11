@@ -13,6 +13,8 @@ class person {
 }
 
 let peopleList = []
+let prizeLimit = 5
+let prizeCounter = 1
 const peopleCounter = document.getElementById("peopleCounter")
 
 //register button
@@ -30,18 +32,23 @@ enroll.onclick = (e) => {
 }
 
 //sweepstake button
-let winner
 const pickWinner = document.getElementById("pickWinner-btn")
 pickWinner.onclick = () => {
-  let checkNoWinners = peopleList.some((i) => i.isWinner === false) //there must be at least one person.isWinner == false
-  if (checkNoWinners) {
-    do {
-      winner = getRandomInt(peopleList.length)  //find winner based on: (math.random => array position)
-    } while (peopleList[winner].isWinner); //skip person if already won
-    peopleList[winner].isWinner = true  //flag winner
-    renderWinner(winner)  //display winner
+  if (prizeCounter <= prizeLimit) {
+    let winner
+    let checkNoWinners = peopleList.some((i) => i.isWinner === false) //there must be at least one person.isWinner == false
+    if (checkNoWinners) {
+      do {
+        winner = getRandomInt(peopleList.length)  //find winner based on: (math.random => array position)
+      } while (peopleList[winner].isWinner); //skip person if already won
+      peopleList[winner].isWinner = true  //flag winner
+      renderWinner(winner)  //display winner
+      prizeCounter++
+    } else {
+      alert('Todas las personas registradas ya ganaron al menos una vez. Se debe registrar mas personas o resetear los ganadores')
+    }
   } else {
-    alert('Todas las personas registradas ya ganaron al menos una vez. Se debe registrar mas personas o resetear los ganadores')
+    alert('No hay mas premios - Resetee a los ganadores')
   }
 }
 
@@ -51,6 +58,7 @@ clearFlags.onclick = () => {
   peopleList.forEach( person => { person.winnerFlagClear() }); //clear flags using object.metod
   const winnerCardsDiv = document.getElementById("winnerCardsDiv")
   winnerCardsDiv.innerHTML = ""
+  prizeCounter = 1
 }
 
 //show every winner
