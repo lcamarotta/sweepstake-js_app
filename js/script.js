@@ -1,7 +1,7 @@
 class person {
   constructor(firstname, lastname, age, phone, email){
-    this.firstname = firstname;
-    this.lastname = lastname;
+    this.firstname = firstname.toUpperCase();
+    this.lastname = lastname.toUpperCase();
     this.age = age;
     this.phone = phone;
     this.email = email;
@@ -11,39 +11,44 @@ class person {
     this.isWinner = false;
   }
 }
-
+//globals
 let peopleList = []
-let prizeLimit = 5
-let prizeCounter = 1
-const peopleCounter = document.getElementById("peopleCounter")
+let winnersLimit = 5  //depends on how many prizes are available
+let winnersCounter = 0  //count winners so it does not exceed prize availability
+const signUp_Button = document.getElementById("signUp-btn")
+const signUpCounter = document.getElementById("signUpCounter")
+const pickWinner_Button = document.getElementById("pickWinner-btn")
+const resetWinners_Button = document.getElementById("resetWinners-btn")
 
-//register button
-const enroll = document.getElementById("enroll-btn")
-enroll.onclick = (e) => {
-  e.preventDefault()
-  const firstname = document.getElementById("inputFirstname")
-  const lastname = document.getElementById("inputLastname")
+//signUp button
+signUp_Button.onclick = (e) => {
   const age = document.getElementById("inputAge")
   const phone = document.getElementById("inputPhone")
   const email = document.getElementById("inputEmail")
-
-  peopleList.push( new person(firstname.value, lastname.value, age.value, phone.value, email.value) )
-  peopleCounter.innerText = `${peopleList.length}` //display enrolled people number
+  const lastname = document.getElementById("inputLastname")
+  const firstname = document.getElementById("inputFirstname")
+  const newPerson = new person(firstname.value, lastname.value, age.value, phone.value, email.value) 
+  
+  e.preventDefault()
+  peopleList.push(newPerson)
+  signUpCounter.innerText = `${peopleList.length}` //display enrolled people number
 }
 
-//sweepstake button
-const pickWinner = document.getElementById("pickWinner-btn")
-pickWinner.onclick = () => {
-  if (prizeCounter <= prizeLimit) {
+//pick winner button
+pickWinner_Button.onclick = () => {
+  if (winnersCounter < winnersLimit) {
     let winner
-    let checkNoWinners = peopleList.some((i) => i.isWinner === false) //there must be at least one person.isWinner == false
-    if (checkNoWinners) {
+    let check_NoWinners = peopleList.some((i) => i.isWinner === false) //there must be at least one person.isWinner == false
+    if (check_NoWinners) {
       do {
         winner = getRandomInt(peopleList.length)  //find winner based on: (math.random => array position)
-      } while (peopleList[winner].isWinner); //skip person if already won
-      peopleList[winner].isWinner = true  //flag winner
-      renderWinner(winner)  //display winner
-      prizeCounter++
+      } while (peopleList[winner].isWinner); //skip if person already won
+      peopleList[winner].isWinner = true  //flag chosen winner
+      console.log('me fui')
+      renderLastWinner(winner)  //display winner
+      console.log('volvi')
+      renderEveryWinner()
+      winnersCounter++
     } else {
       alert('Todas las personas registradas ya ganaron al menos una vez. Se debe registrar mas personas o resetear los ganadores')
     }
@@ -52,21 +57,13 @@ pickWinner.onclick = () => {
   }
 }
 
-//clear winners flag button
-const clearFlags = document.getElementById("clearFlags-btn")
-clearFlags.onclick = () => {
-  peopleList.forEach( person => { person.winnerFlagClear() }); //clear flags using object.metod
+//clear winners button
+resetWinners_Button.onclick = () => {
   const winnerCardsDiv = document.getElementById("winnerCardsDiv")
-  winnerCardsDiv.innerHTML = ""
-  prizeCounter = 1
-}
 
-//show every winner
-const showWinner = document.getElementById("showWinner-btn")
-showWinner.onclick = () => {
-  let peopleList_Winners = peopleList.filter( (i) => i.isWinner === true)
-  if (peopleList_Winners.length == 0) alert('Aun no hay ningun ganador')
-  renderEveryWinner(peopleList_Winners)
+  peopleList.forEach(person => { person.winnerFlagClear() }); //clear flags using metod
+  winnerCardsDiv.innerHTML = ""
+  winnersCounter = 0
 }
 
 //functions:
@@ -74,7 +71,7 @@ function getRandomInt(maxNum) {
   return Math.floor(Math.random() * maxNum);
 }
 
-function renderWinner(winner){
+function renderLastWinner(winner){
   const winnerDiv = document.getElementById("winnerDiv")
   winnerDiv.innerHTML = `
                           <div class="container setBorder">
@@ -85,26 +82,29 @@ function renderWinner(winner){
                           </div>
                         `
   winnerDiv.className = "col my-5"
+  return
 }
 
-function renderEveryWinner(winners){
-  let num = 0
+function renderEveryWinner(){
   let card
+  let winnerNumber = winnersLimit
+  const winnersList = peopleList.filter((i) => i.isWinner === true)
   const winnerCardsDiv = document.getElementById("winnerCardsDiv")
   winnerCardsDiv.innerHTML = ""
-  winners.forEach(winner => {
-    num++
+  winnersList.forEach(winner => {
     card = document.createElement("div")
     card.classList.add('card', 'col-2', 'm-2')
     card.innerHTML =  `
-                        <img src="./img/${num}.jpg" class="card-img-top" alt="Imagen de premio">
+                        <img src="./img/${winnerNumber}.jpg" class="card-img-top" alt="Imagen de premio">
                         <div class="card-body text-center">
-                          <h5 class="card-title">Premio Nro.${num}</h5>
+                          <h5 class="card-title">Premio Nro.${winnerNumber}</h5>
                           <p class="card-text my-0">${winner.firstname} ${winner.lastname}</p>
                           <p class="card-text my-0">Tel: ${winner.phone}</p>
                           <p class="card-text my-0">Email: ${winner.email}</p>
                         </div>
                       `
     winnerCardsDiv.appendChild(card)
+    winnerNumber--
   });
+  return
 }
