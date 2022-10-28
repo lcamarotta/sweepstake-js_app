@@ -11,7 +11,7 @@ class person {
     this.isWinner = false;
   }
 }
-//globals
+//globals var
 let peopleList = []
 let winnersLimit = 5  //depends on how many prizes are available
 let winnersCounter = 0  //count winners so it does not exceed prize availability
@@ -20,6 +20,13 @@ const signUpCounter = document.getElementById("signUpCounter")
 const pickWinner_Button = document.getElementById("pickWinner-btn")
 const resetWinners_Button = document.getElementById("resetWinners-btn")
 
+//code
+readFromFile('./js/data.json')
+console.log('test', peopleList)
+saveToLocalStorage('peopleList', peopleList)
+updateCounter()
+
+//buttons
 //signUp button
 signUp_Button.onclick = (e) => {
   const age = document.getElementById("inputAge")
@@ -31,7 +38,7 @@ signUp_Button.onclick = (e) => {
   
   e.preventDefault()
   peopleList.push(newPerson)
-  signUpCounter.innerText = `${peopleList.length}` //display enrolled people number
+  updateCounter()
 }
 
 //pick winner button
@@ -108,3 +115,39 @@ function renderEveryWinner(){
   });
   return
 }
+
+function saveToLocalStorage(key, value){ //key must be string
+  localStorage.setItem(key, JSON.stringify(value))
+}
+
+function readFromLocalStorage(key){
+  let dataFromLocalStorage = JSON.parse(localStorage.getItem(key))
+  return dataFromLocalStorage
+}
+
+function readFromFile(filePath){
+  fetch(filePath)
+  .then( (obj) => obj.json() )
+  .then( (data) => {
+    console.log(data)
+    console.log(peopleList)
+    peopleList = data
+    console.log(peopleList)
+  } ) //should get array of objects
+}
+
+function updateCounter(){
+  signUpCounter.innerText = `${peopleList.length}`  //display enrolled people number
+}
+
+async function readFromFile(filePath){
+  let obj = await fetch(filePath)
+  let data = await obj.json()
+  console.log('obj', obj)
+  console.log('data', data)
+  return data
+}
+peopleList = []
+console.log('empty people list', peopleList)
+peopleList = readFromFile('./js/data.json')
+console.log('not empty list', peopleList)
