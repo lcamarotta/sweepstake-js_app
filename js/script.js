@@ -17,14 +17,12 @@ let winnersLimit = 5  //depends on how many prizes are available
 let winnersCounter = 0  //count winners so it does not exceed prize availability
 const signUp_Button = document.getElementById("signUp-btn")
 const signUpCounter = document.getElementById("signUpCounter")
+const readFromFile_Button = document.getElementById("readFromFile-btn")
+const readFromLocalStorage_Button = document.getElementById("readFromLocalStorage-btn")
 const pickWinner_Button = document.getElementById("pickWinner-btn")
 const resetWinners_Button = document.getElementById("resetWinners-btn")
 
 //code
-readFromFile('./js/data.json')
-console.log('test', peopleList)
-saveToLocalStorage('peopleList', peopleList)
-updateCounter()
 
 //buttons
 //signUp button
@@ -39,10 +37,32 @@ signUp_Button.onclick = (e) => {
   e.preventDefault()
   peopleList.push(newPerson)
   updateCounter()
+  saveToLocalStorage('peopleList', peopleList)
+}
+
+//read from file button
+readFromFile_Button.onclick = () => {
+  peopleList = []
+  readFromFile('./js/data.json')
+  resetWinners()
+}
+//read from LS button
+readFromLocalStorage_Button.onclick = () => {
+  peopleList = readFromLocalStorage('peopleList') || []
+  updateCounter()
+  resetWinners()
 }
 
 //pick winner button
 pickWinner_Button.onclick = () => {
+  if (peopleList.length == 0){
+    Swal.fire(
+      'Error',
+      'No hay personas registradas',
+      'error'
+    )
+    return
+  }
   if (winnersCounter < winnersLimit) {
     let winner
     let check_NoWinners = peopleList.some((i) => i.isWinner === false) //there must be at least one person.isWinner == false
@@ -51,26 +71,41 @@ pickWinner_Button.onclick = () => {
         winner = getRandomInt(peopleList.length)  //find winner based on: (math.random => array position)
       } while (peopleList[winner].isWinner); //skip if person already won
       peopleList[winner].isWinner = true  //flag chosen winner
-      console.log('me fui')
       renderLastWinner(winner)  //display winner
-      console.log('volvi')
       renderEveryWinner()
       winnersCounter++
     } else {
-      alert('Todas las personas registradas ya ganaron al menos una vez. Se debe registrar mas personas o resetear los ganadores')
+      Swal.fire({
+        title: 'Espera!',
+        text: 'Todas las personas registradas ya ganaron un premio.',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Reiniciar ganadores'
+      }).then((result) => {
+        resetWinners()
+        if (result.isConfirmed) {
+          Swal.fire(
+            'OK',
+            'Ganadores reiniciados',
+            'success'
+          )
+        }
+      })
     }
   } else {
-    alert('No hay mas premios - Resetee a los ganadores')
+    Swal.fire(
+      'Espera!',
+      'Se han acabado los premios',
+      'warning'
+    )
   }
 }
 
 //clear winners button
 resetWinners_Button.onclick = () => {
-  const winnerCardsDiv = document.getElementById("winnerCardsDiv")
-
-  peopleList.forEach(person => { person.winnerFlagClear() }); //clear flags using metod
-  winnerCardsDiv.innerHTML = ""
-  winnersCounter = 0
+  resetWinners()
 }
 
 //functions:
@@ -116,6 +151,14 @@ function renderEveryWinner(){
   return
 }
 
+function resetWinners(){
+  const winnerCardsDiv = document.getElementById("winnerCardsDiv")
+
+  peopleList.forEach(person => { person.winnerFlagClear() }); //clear flags using metod
+  winnerCardsDiv.innerHTML = ""
+  winnersCounter = 0
+}
+
 function saveToLocalStorage(key, value){ //key must be string
   localStorage.setItem(key, JSON.stringify(value))
 }
@@ -127,27 +170,21 @@ function readFromLocalStorage(key){
 
 function readFromFile(filePath){
   fetch(filePath)
-  .then( (obj) => obj.json() )
-  .then( (data) => {
-    console.log(data)
-    console.log(peopleList)
-    peopleList = data
-    console.log(peopleList)
-  } ) //should get array of objects
+  .then( (response) => response.json() )
+  .then( (dataArray) => {
+    for (const object of dataArray) {
+      pushPersonToPeopleList(object)
+    }
+  } )
 }
 
 function updateCounter(){
   signUpCounter.innerText = `${peopleList.length}`  //display enrolled people number
 }
 
-async function readFromFile(filePath){
-  let obj = await fetch(filePath)
-  let data = await obj.json()
-  console.log('obj', obj)
-  console.log('data', data)
-  return data
+function pushPersonToPeopleList(object){
+  const {age, email, firstname, lastname, phone} = object
+  const newPerson = new person(firstname, lastname, age, phone, email)
+  peopleList.push(newPerson)
+  updateCounter()
 }
-peopleList = []
-console.log('empty people list', peopleList)
-peopleList = readFromFile('./js/data.json')
-console.log('not empty list', peopleList)
