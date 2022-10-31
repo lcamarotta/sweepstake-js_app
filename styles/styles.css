@@ -3,25 +3,60 @@
   padding: 0;
 }
 
+body{
+background-image: url(../img/starring.png);
+}
+
+#logo{
+  max-width: 60%;
+}
+
+#inputPhone{
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+#form{
+  color: rgb(108, 29, 29);
+  background-color: rgb(255, 254, 234);
+}
+
+/* #formContainer{
+  display: none;
+} */
+
 .titleBig{
   font-size: xx-large;
   font-weight: bolder;
 }
 
 .titleSmall{
-  font-size: larger;
+  font-size: x-large;
   font-weight: bold;
 }
 
 .setBorder{
-  border: double black;
+  border: 5px double rgb(255, 251, 0);
   border-radius: 1rem;
   padding: 5rem;
 }
 
-#inputPhone{
-  -webkit-appearance: none;
-  -moz-appearance: textfield;
+.btn-custom-yellow{
+  color: rgb(108, 29, 29);
+  border: solid 1px rgb(212, 209, 40);
+  background-color: rgb(255, 255, 109);
+}
+.btn-custom-yellow:hover, .btn-custom-yellow:active:focus{
+  color: rgb(153, 35, 35);
+  border: rgb(109, 108, 30);
+  border: solid 1px rgb(212, 209, 40);
+  background-color: rgb(255, 252, 70);
+}
+
+@media screen and (min-width: 980px){
+  #logo{
+    max-width: 30%;
+  }
 }
 
 .card{
