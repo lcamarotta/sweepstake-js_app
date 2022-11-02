@@ -1,0 +1,83 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+background-image: url(../img/starring.png);
+}
+
+.container-full{
+  @include flex-column-center;
+  width: 100vw;  height: 100vh;
+}
+
+.container-center{
+  @include flex-column-center;
+  max-width: 600px; max-height: fit-content;
+  margin: 10px;
+}
+
+.titleBig{
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+.titleSmall{
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.setBorder{
+  border: 5px double rgb(255, 251, 0);
+  border-radius: 1rem;
+}
+
+
+
+
+
+
+/*-----------------------------------------------------------------------*/
+#logo{
+  max-width: 60%;
+}
+
+#inputPhone{
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+#form{
+  color: rgb(108, 29, 29);
+  background-color: rgb(255, 254, 234);
+}
+
+/* #formContainer{
+  display: none;
+} */
+
+
+
+.btn-custom-yellow{
+  color: rgb(108, 29, 29);
+  border: solid 1px rgb(212, 209, 40);
+  background-color: rgb(255, 255, 109);
+}
+.btn-custom-yellow:hover, .btn-custom-yellow:active:focus{
+  color: rgb(153, 35, 35);
+  border: rgb(109, 108, 30);
+  border: solid 1px rgb(212, 209, 40);
+  background-color: rgb(255, 252, 70);
+}
+
+@media screen and (min-width: 980px){
+  #logo{
+    max-width: 30%;
+  }
+}
+
+.card{
+  width: 18rem;
+  padding: 0;
+}

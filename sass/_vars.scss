@@ -1,0 +1,15 @@
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+$bg-color-primary: rgb(255, 254, 234);
+$color-primary: rgb(108, 29, 29);

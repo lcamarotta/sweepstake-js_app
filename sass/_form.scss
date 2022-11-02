@@ -1,0 +1,7 @@
+form{
+  @include flex-column-center;
+  margin: 0; padding: 10px;
+  color: $color-primary;
+  background-color: $bg-color-primary;
+}
+
