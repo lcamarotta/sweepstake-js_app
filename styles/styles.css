@@ -5,27 +5,78 @@
 
 body {
   background-image: url(../img/starring.png);
+  overflow: hidden;
 }
 
-.container-full {
+.display_none {
+  display: none !important;
+}
+
+.container-full-screen {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100vw;
   height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  z-index: 1;
 }
 
-.container-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.container-100 {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.container-60 {
+  width: 60%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.container {
   max-width: 600px;
   max-height: -webkit-fit-content;
   max-height: -moz-fit-content;
   max-height: fit-content;
-  margin: 10px;
+}
+
+.mar-1 {
+  margin: 1rem;
+}
+
+.mar-2 {
+  margin: 2rem;
+}
+
+.mar-y-1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mar-y-2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.pad-1 {
+  padding: 1rem;
+}
+
+.pad-2 {
+  padding: 2rem;
+}
+
+.container-center, .formContainer, .formContainer div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .titleBig {
@@ -38,59 +89,59 @@ body {
   font-weight: bold;
 }
 
-.setBorder {
-  border: 5px double rgb(255, 251, 0);
+.setBorder-primary {
+  border: 3px double rgb(108, 29, 29);
+  border-radius: 8px;
+}
+
+.setBorder-secondary {
+  border: 5px double rgb(252, 255, 104);
   border-radius: 1rem;
 }
 
-/*-----------------------------------------------------------------------*/
-#logo {
-  max-width: 60%;
+.btn-yellow {
+  margin: 0;
+  padding: 8px 18px;
+  color: rgb(108, 29, 29);
+  border: double 2px rgb(212, 209, 40);
+  border-radius: 8px;
+  background-color: rgb(252, 255, 104);
+  font-weight: bolder;
+}
+
+.btn-yellow:hover {
+  color: rgb(153, 35, 35);
+  border: rgb(109, 108, 30);
+  border: solid 2px rgb(108, 29, 29);
+  background-color: rgb(252, 255, 104);
+}
+
+.formContainer, .formContainer div {
+  margin: 10px;
+  padding: 15px;
+  color: rgb(108, 29, 29);
+  background-color: rgb(255, 254, 234);
+}
+.formContainer div {
+  margin: 10px;
+  padding: 0;
+}
+.formContainer div form {
+  width: 90%;
+}
+.formContainer div form input {
+  margin: 4px;
+  padding: 5px;
+  width: 100%;
+}
+.formContainer div form label {
+  font-size: large;
+}
+.formContainer div form button {
+  margin-top: 15px;
 }
 
 #inputPhone {
   -webkit-appearance: none;
   -moz-appearance: textfield;
-}
-
-#form {
-  color: rgb(108, 29, 29);
-  background-color: rgb(255, 254, 234);
-}
-
-/* #formContainer{
-  display: none;
-} */
-.btn-custom-yellow {
-  color: rgb(108, 29, 29);
-  border: solid 1px rgb(212, 209, 40);
-  background-color: rgb(255, 255, 109);
-}
-
-.btn-custom-yellow:hover, .btn-custom-yellow:active:focus {
-  color: rgb(153, 35, 35);
-  border: rgb(109, 108, 30);
-  border: solid 1px rgb(212, 209, 40);
-  background-color: rgb(255, 252, 70);
-}
-
-@media screen and (min-width: 980px) {
-  #logo {
-    max-width: 30%;
-  }
-}
-.card {
-  width: 18rem;
-  padding: 0;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 10px;
-  color: rgb(108, 29, 29);
-  background-color: rgb(255, 254, 234);
 }/*# sourceMappingURL=styles.css.map */

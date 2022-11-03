@@ -5,17 +5,61 @@
 
 body{
 background-image: url(../img/starring.png);
+overflow: hidden;
 }
 
-.container-full{
+.display_none{
+  display: none !important;
+}
+
+.container-full-screen{
   @include flex-column-center;
   width: 100vw;  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.container-100{
+  width: 100%; height: fit-content;
+}
+
+.container-60{
+  width: 60%; height: fit-content;
+}
+
+.container{
+  max-width: 600px; max-height: fit-content;
+}
+
+.mar-1{
+  margin: $margin-1;
+}
+
+.mar-2{
+  margin: $margin-2;
+}
+.mar-y-1{
+  margin-top: $margin-1;
+  margin-bottom: $margin-1;
+}
+
+.mar-y-2{
+  margin-top: $margin-2;
+  margin-bottom: $margin-2;
+}
+
+.pad-1{
+  padding: $padding-1;
+}
+
+.pad-2{
+  padding: $padding-2;
 }
 
 .container-center{
   @include flex-column-center;
-  max-width: 600px; max-height: fit-content;
-  margin: 10px;
 }
 
 .titleBig{
@@ -28,56 +72,27 @@ background-image: url(../img/starring.png);
   font-weight: bold;
 }
 
-.setBorder{
-  border: 5px double rgb(255, 251, 0);
+.setBorder-primary{
+  border: 3px double $color-primary;
+  border-radius: 8px;
+}
+
+.setBorder-secondary{
+  border: 5px double $color-secondary;
   border-radius: 1rem;
 }
 
-
-
-
-
-
-/*-----------------------------------------------------------------------*/
-#logo{
-  max-width: 60%;
+.btn-yellow{
+  margin: 0; padding: 8px 18px;
+  color: $color-primary;
+  border: double 2px rgb(212, 209, 40);
+  border-radius: 8px;
+  background-color: $color-secondary;
+  font-weight: bolder;
 }
-
-#inputPhone{
-  -webkit-appearance: none;
-  -moz-appearance: textfield;
-}
-
-#form{
-  color: rgb(108, 29, 29);
-  background-color: rgb(255, 254, 234);
-}
-
-/* #formContainer{
-  display: none;
-} */
-
-
-
-.btn-custom-yellow{
-  color: rgb(108, 29, 29);
-  border: solid 1px rgb(212, 209, 40);
-  background-color: rgb(255, 255, 109);
-}
-.btn-custom-yellow:hover, .btn-custom-yellow:active:focus{
+.btn-yellow:hover{
   color: rgb(153, 35, 35);
   border: rgb(109, 108, 30);
-  border: solid 1px rgb(212, 209, 40);
-  background-color: rgb(255, 252, 70);
-}
-
-@media screen and (min-width: 980px){
-  #logo{
-    max-width: 30%;
-  }
-}
-
-.card{
-  width: 18rem;
-  padding: 0;
+  border: solid 2px $color-primary;
+  background-color: $color-secondary;
 }

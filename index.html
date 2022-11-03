@@ -11,30 +11,90 @@
 
 <body>
   <main>
+    <!-- ----TITLE---- -->
+    <div class="container-center container-100">
+      <div class="container container-center mar-2" >
+        <img class="container-60" id="" src="./img/logo_en.png" alt="">
+      </div>
+    </div>
+    <!-- end of TITLE -->
     <!-- -- FORM -- -->
-    <div class="container-full" id="">
-      <div class="container-center">
-        <form class="setBorder" id="">
-          <div class="">
-            <p class="titleSmall">Sign up and participate!</p>
-          </div>
-          <div class="">
-            <label class="">Your Name</label>
-            <input type="text" class="" id="inputFirstname" placeholder="Firstname">
-            <input type="text" class="" id="inputLastname" placeholder="Lastname">
-          </div>
-          <div class="">
-            <label class="">Your contact data</label>
-            <input type="number" class="" id="inputPhone" placeholder="Phone number">
-            <input type="email" class="" id="inputEmail" placeholder="Email">
-          </div>
-          <div class="">
-            <button type="submit" class="btn-yellow" id="signUp-btn">Sign Up</button>
-          </div>
-        </form>
+    <div class="container-full-screen display_none" id="">
+      <div class="formContainer setBorder-secondary">
+        <div>
+          <p class="titleSmall">Sign up and participate!</p>
+        </div>
+        <div class="container-100">
+          <form id="">
+            <div>
+              <label>Your Name</label>
+              <input type="text" class="setBorder-primary" id="inputFirstname" placeholder="Firstname">
+              <input type="text" class="setBorder-primary" id="inputLastname" placeholder="Lastname">
+            </div>
+            <div>
+              <label>Your contact data</label>
+              <input type="number" class="setBorder-primary" id="inputPhone" placeholder="Phone number">
+              <input type="email" class="setBorder-primary" id="inputEmail" placeholder="Email">
+            </div>
+            <div>
+              <button type="submit" class="btn-yellow" id="signUp-btn">Sign Up</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
     <!-- end of FORM -->
+    <!-- buttons -->
+    <div class="container-100 mar-y-2">
+      <div class="container-center">
+        <div class="mar-y-1">
+          <p class="titleSmall">Person cuantity: x</p>
+          <p class="titleSmall">Prize cuantity: x</p>
+        </div>
+        <div class="mar-y-1">
+          <button class="btn-yellow">load file</button>
+          <button class="btn-yellow">load local storage</button>
+          <button class="btn-yellow">begin</button>
+        </div>
+      </div>
+    </div>
+    <!-- end of BUTTONS -->
+
+<!-- counter, sweepstake, winner display -->
+<!-- <div class="container container-center mar-2">
+  <div class="setBorder-primary">
+    <div class="container setBorder-secondary">
+      <p class="titleSmall">Personas anotadas hasta el momento: <span id="signUpCounter">0</span></p>
+      <button class="btn-yellow" id="readFromFile-btn">Cargar archivo ejemplo</button>
+      <button class="btn-yellow" id="readFromLocalStorage-btn">Cargar local storage</button>
+      <p>Cantidad maxima de premios: 5</p>
+      <button class="btn-yellow" id="pickWinner-btn">Sortear!</button>
+    </div>
+  </div>
+  <div class="" id="winnerDiv">
+    <div class="container setBorder">
+      <p class="titleBig">Saliste Sorteado!</p>
+      <p class="titleSmall">Nombre Apellido</p>
+      <p class="">Tel: </p>
+      <p class="">Email: </p>
+    </div>
+  </div>
+</div> -->
+<!-- end of counter, sweepstake, winner display -->
+
+<!-- display all winners -->
+<!-- <div class="setBorder">
+  <div class="">
+    <button class="btn-yellow" id="resetWinners-btn">Reiniciar Ganadores</button>
+  </div>
+  <div class="">
+    <div class="" id="winnerCardsDiv">
+    </div>
+  </div>
+</div> -->
+<!-- end of diplay all winners -->
+
+
   </main>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="./js/script.js"></script>
