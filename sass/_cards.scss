@@ -1,0 +1,19 @@
+.card{
+  @extend .setBorder-primary;
+  margin: 2rem; padding: 0;
+  display: flex;
+  
+  background-color: $bg-color-primary;
+  img{
+    max-width: 220px;
+  }
+  .cardDescription{
+    @include flex-column-center;
+    margin: 5px 10px; padding: 0 8px;
+    .cardTitle{
+      @extend .titleBig;
+      color: $color-primary;
+    }
+    .cardText{}
+  }
+}
