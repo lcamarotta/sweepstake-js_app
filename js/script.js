@@ -13,9 +13,10 @@ class person {
 }
 
 class prize {
-  constructor(prize_name, description, file_name){
+  constructor(prize_name, description, pic_path){
     this.name = prize_name;
     this.description = description;
-    this.file = file_name;
+    this.picture = pic_path;
   }
 }
+

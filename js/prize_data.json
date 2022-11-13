@@ -1,1 +1,27 @@
-[{"name":"Premio 1","description":"Premio 1","file":"1.jpg"},{"name":"Premio 2","description":"Premio 2","file":"2.jpg"},{"name":"Premio 3","description":"Premio 3","file":"3.jpg"},{"name":"Premio 1","description":"Premio 4","file":"4.jpg"},{"name":"Premio 5","description":"Premio 5","file":"5.jpg"}]
+[
+  {
+  "name":"Prize 1",
+  "description":"Supercar",
+  "picture":"1.jpg"
+  },
+  {
+  "name":"Prize 2",
+  "description":"Motorbike",
+  "picture":"2.jpg"
+  },
+  {
+  "name":"Prize 3",
+  "description":"PS5",
+  "picture":"3.jpg"
+  },
+  {
+  "name":"Prize 1",
+  "description":"TV",
+  "picture":"4.jpg"
+  },
+  {
+  "name":"Prize 5",
+  "description":"Home theater",
+  "picture":"5.jpg"
+  }
+]

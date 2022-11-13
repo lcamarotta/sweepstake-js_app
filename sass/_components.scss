@@ -1,0 +1,73 @@
+//form
+.formContainer{
+  @include flex-column-center;
+  margin: 0.6rem; padding: 1rem;
+  color: $color-3;
+  background-color: $color-1;
+  
+  div{
+    @extend .formContainer;
+    margin: 0.6rem; padding: 0;
+    form{
+      width: 90%;
+      input{
+        margin: 0.3rem; padding: 0.3rem;
+        width: 100%;
+      }
+      label{
+        font-size: large;
+      }
+      button{
+        margin-top: 1rem;
+      }
+      #inputPhone{
+        -webkit-appearance: none;
+        -moz-appearance: textfield;
+      }      
+    }
+  }
+}
+
+//cards
+.card{
+  @extend .setBorder-primary;
+  @include flex-column-center;
+  margin: 1rem; padding: 0;
+  background-color: $color-1;
+  img{
+    width: 100%;
+  }
+  .cardDescription{
+    @include flex-column-center;
+    margin: 0.3rem 0.5rem; padding: 0 0.5rem;
+    color: $color-3;
+    .cardTitle{
+      @extend .titleBig;
+    }
+    .cardText{
+      font-size: 1.2rem;
+    }
+  }
+  @media screen and (min-width: $breakpoint-1){
+    flex-direction: row;
+    img{
+      max-width: 20rem;
+    }
+  }
+}
+
+//buttons
+.btn-secondary{
+  margin: 0; padding: 0.6rem 1rem;
+  color: $color-4;
+  border: solid 0.15rem $color-4;
+  border-radius: 0.6rem;
+  background-color: $color-2;
+  font-weight: bolder;
+}
+
+.btn-secondary:hover{
+  color: $color-3;
+  border: double 0.3rem $color-1;
+  transform: scale(1.1);
+}

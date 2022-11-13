@@ -10,34 +10,36 @@
 </head>
 
 <body>
-  <main>
+  <main class="flex-col-center">
+
     <!-- ----TITLE---- -->
-    <div class="container-center container-100">
-      <div class="container container-center mar-2" >
-        <img class="container-60" id="" src="./img/logo_en.png" alt="">
+    <div class="flex-col-center container-100width">
+      <div class="container-small flex-col-center my-2 mx-1" >
+        <img class="container-100width" id="" src="./img/logo_en.png" alt="">
       </div>
     </div>
     <!-- end of TITLE -->
+
     <!-- -- FORM -- -->
     <div class="container-full-screen display_none" id="">
       <div class="formContainer setBorder-secondary">
         <div>
           <p class="titleSmall">Sign up and participate!</p>
         </div>
-        <div class="container-100">
+        <div class="container-100width">
           <form id="">
             <div>
               <label>Your Name</label>
-              <input type="text" class="setBorder-primary" id="inputFirstname" placeholder="Firstname">
-              <input type="text" class="setBorder-primary" id="inputLastname" placeholder="Lastname">
+              <input type="text" class="setBorder-secondary" id="inputFirstname" placeholder="Firstname">
+              <input type="text" class="setBorder-secondary" id="inputLastname" placeholder="Lastname">
             </div>
             <div>
               <label>Your contact data</label>
-              <input type="number" class="setBorder-primary" id="inputPhone" placeholder="Phone number">
-              <input type="email" class="setBorder-primary" id="inputEmail" placeholder="Email">
+              <input type="number" class="setBorder-secondary" id="inputPhone" placeholder="Phone number">
+              <input type="email" class="setBorder-secondary" id="inputEmail" placeholder="Email">
             </div>
             <div>
-              <button type="submit" class="btn-yellow" id="signUp-btn">Sign Up</button>
+              <button type="submit" class="btn-secondary" id="signUp-btn">Sign Up</button>
             </div>
           </form>
         </div>
@@ -46,8 +48,9 @@
     <!-- end of FORM -->
 
     <!-- showcase -->
-    <div class="container mar-y-2">
-      <div class="container-center">
+    <div class="container-big my-2 display_none">
+      <div class="flex-media">
+
         <div class="card">
           <img src="./img/prizes/1.jpg" alt="">
           <div class="cardDescription">
@@ -62,67 +65,53 @@
             <p class="cardText">Description</p>
           </div>
         </div>
-        <div class="card">
-          <img src="./img/prizes/1.jpg" alt="">
-          <div class="cardDescription">
-            <p class="cardTitle">Prize 1</p>
-            <p class="cardText">Description</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="./img/prizes/1.jpg" alt="">
-          <div class="cardDescription">
-            <p class="cardTitle">Prize 1</p>
-            <p class="cardText">Description</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="./img/prizes/1.jpg" alt="">
-          <div class="cardDescription">
-            <p class="cardTitle">Prize 1</p>
-            <p class="cardText">Description</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="./img/prizes/1.jpg" alt="">
-          <div class="cardDescription">
-            <p class="cardTitle">Prize 1</p>
-            <p class="cardText">Description</p>
-          </div>
-        </div>
+
       </div>
     </div>
     <!-- end of showcase -->
 
-    <!-- buttons -->
-    <div class="container-100 mar-y-2">
-      <div class="container-center">
-        <div class="mar-y-1">
-          <p class="titleSmall">Person cuantity: x</p>
-          <p class="titleSmall">Prize cuantity: x</p>
+    <!-- buttons & COUNTERS-->
+    <div class="container-100width my-2 display_none">
+      <div class="flex-col-center">
+        <div class="my-1 text-color-2">
+          <p class="titleSmall">People participating: <span id="counter_people">0</span></p>
+          <p class="titleSmall">Prizes available: <span id="counter_prizes">0</span> || Remaining: <span id="counter_prizes_remaining">0</span></p>
         </div>
-        <div class="mar-y-1">
-          <button class="btn-yellow">load file</button>
-          <button class="btn-yellow">load local storage</button>
-          <button class="btn-yellow">begin</button>
+        <div class="my-1">
+          <button class="btn-secondary mx-1">LOAD FILE</button>
+          <button class="btn-secondary mx-1">LOAD LS</button>
+          <button class="btn-secondary mx-1">BEGIN</button>
         </div>
       </div>
     </div>
-    <!-- end of BUTTONS -->
+    <!-- end of BUTTONS & COUNTERS-->
 
+    <!--  -->
+    <div class="container-medium setBorder-primary my-3 bg-black">
+      <p class="titleBig text-center text-color-2 m-1">Welcome</p>
+      <p class="titleSmall text-center text-color-2">In this website you can award prizes by randomly picking a winner from a list of people.</p>
+      <p class="titleSmall text-center text-color-2">But first, we need to generate said list of people.</p>
+      <p class="titleSmall text-center text-color-2 mt-2">Select an option to begin:</p>
+      <div class="flex-media">
+        <button class="btn-secondary m-1">LOAD FROM EXAMPLE FILE</button>
+        <button class="btn-secondary m-1">REGISTER MANUALLY</button>
+      </div>
+    </div>
+    <!--  -->
+    
 <!-- counter, sweepstake, winner display -->
-<!-- <div class="container container-center mar-2">
+<!-- <div class="container-100width flex-col-center m-2">
   <div class="setBorder-primary">
-    <div class="container setBorder-secondary">
+    <div class="container-small setBorder-secondary">
       <p class="titleSmall">Personas anotadas hasta el momento: <span id="signUpCounter">0</span></p>
-      <button class="btn-yellow" id="readFromFile-btn">Cargar archivo ejemplo</button>
-      <button class="btn-yellow" id="readFromLocalStorage-btn">Cargar local storage</button>
+      <button class="btn-secondary" id="readFromFile-btn">Cargar archivo ejemplo</button>
+      <button class="btn-secondary" id="readFromLocalStorage-btn">Cargar local storage</button>
       <p>Cantidad maxima de premios: 5</p>
-      <button class="btn-yellow" id="pickWinner-btn">Sortear!</button>
+      <button class="btn-secondary" id="pickWinner-btn">Sortear!</button>
     </div>
   </div>
   <div class="" id="winnerDiv">
-    <div class="container setBorder">
+    <div class="container-small setBorder-primary">
       <p class="titleBig">Saliste Sorteado!</p>
       <p class="titleSmall">Nombre Apellido</p>
       <p class="">Tel: </p>
@@ -133,9 +122,9 @@
 <!-- end of counter, sweepstake, winner display -->
 
 <!-- display all winners -->
-<!-- <div class="setBorder">
+<!-- <div class="setBorder-primary">
   <div class="">
-    <button class="btn-yellow" id="resetWinners-btn">Reiniciar Ganadores</button>
+    <button class="btn-secondary" id="resetWinners-btn">Reiniciar Ganadores</button>
   </div>
   <div class="">
     <div class="" id="winnerCardsDiv">

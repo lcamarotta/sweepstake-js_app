@@ -1,0 +1,169 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+background-image: url(../img/starring.png);
+// overflow: hidden;
+}
+
+.display_none{
+  display: none !important;
+}
+
+.bg-black{
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.container-full-screen{
+  @include flex-column-center;
+  @extend .bg-black;
+  width: 100vw;  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.container-100width{
+  width: 100%; height: fit-content;
+}
+
+.container-60width{
+  width: 60%; height: fit-content;
+}
+
+.container-small{
+  max-width: 500px; max-height: fit-content;
+}
+
+.container-medium{
+  max-width: 900px; max-height: fit-content;
+}
+
+.container-big{
+  max-width: 1200px; max-height: fit-content;
+}
+
+.flex-col-center{
+  @include flex-column-center;
+}
+
+.flex-media{
+  @include flex-column-center;
+  @media screen and (min-width: $breakpoint-1) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.titleBig{
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+.titleSmall{
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.setBorder-primary{
+  border: 0.3rem double $color-4;
+  border-radius: 0.6rem;
+}
+
+.setBorder-secondary{
+  border: 0.4rem double $color-2;
+  border-radius: 1rem;
+}
+
+.m-1{
+  margin: $margin-1 !important;
+}
+
+.m-2{
+  margin: $margin-2 !important;
+}
+
+.m-3{
+  margin: $margin-3 !important;
+}
+
+.my-1{
+  margin-top: $margin-1 !important;
+  margin-bottom: $margin-1 !important;
+}
+
+.my-2{
+  margin-top: $margin-2 !important;
+  margin-bottom: $margin-2 !important;
+}
+
+.my-3{
+  margin-top: $margin-3 !important;
+  margin-bottom: $margin-3 !important;
+}
+
+.mt-1{
+  margin-top: $margin-1 !important;
+}
+
+.mt-2{
+  margin-top: $margin-2 !important;
+}
+
+.mt-3{
+  margin-top: $margin-3 !important
+}
+
+.mb-1{
+  margin-bottom: $margin-1 !important;
+}
+
+.mb-2{
+  margin-bottom: $margin-2 !important;
+}
+
+.mb-3{
+  margin-bottom: $margin-3 !important;
+}
+
+.mx-1{
+  margin-left: $margin-1 !important;
+  margin-right: $margin-1 !important;
+}
+
+.mx-2{
+  margin-left: $margin-2 !important;
+  margin-right: $margin-2 !important;
+}
+
+.mx-3{
+  margin-left: $margin-3 !important;
+  margin-right: $margin-3 !important;
+}
+
+.p-1{
+  padding: $padding-1 !important;
+}
+
+.p-2{
+  padding: $padding-2 !important;
+}
+
+.text-color-1{
+  color: $color-1;
+}
+.text-color-2{
+  color: $color-2;
+}
+.text-color-3{
+  color: $color-3;
+}
+.text-color-4{
+  color: $color-4;
+}
+
+.text-center{
+  text-align: center;
+}
