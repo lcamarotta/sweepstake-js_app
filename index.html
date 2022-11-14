@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
   <link rel="stylesheet" href="./styles/styles.css">
   <link rel="shortcut icon" href="./img/icon.png">
   <title>Online Sweepstakes</title>
@@ -20,8 +21,8 @@
     </div>
     <!-- end of TITLE -->
 
-    <!-- -- FORM -- -->
-    <div class="container-full-screen display_none" id="">
+    <!-- -- FORM - hidden by default-- -->
+    <div class="container-full-screen display_none" id="register-form">
       <div class="formContainer setBorder-secondary">
         <div>
           <p class="titleSmall">Sign up and participate!</p>
@@ -29,14 +30,15 @@
         <div class="container-100width">
           <form id="">
             <div>
-              <label>Your Name</label>
-              <input type="text" class="setBorder-secondary" id="inputFirstname" placeholder="Firstname">
-              <input type="text" class="setBorder-secondary" id="inputLastname" placeholder="Lastname">
+              <label>Name</label>
+              <input type="text" class="setBorder-secondary" id="inputFirstname" placeholder="Firstname" required="required">
+              <input type="text" class="setBorder-secondary" id="inputLastname" placeholder="Lastname" required="required">
+              <input type="number" class="setBorder-secondary" id="inputAge" placeholder="Age - Between 18 and 110" required="required">
             </div>
             <div>
-              <label>Your contact data</label>
-              <input type="number" class="setBorder-secondary" id="inputPhone" placeholder="Phone number">
-              <input type="email" class="setBorder-secondary" id="inputEmail" placeholder="Email">
+              <label>Contact data</label>
+              <input type="number" class="setBorder-secondary" id="inputPhone" placeholder="Phone number" required="required">
+              <input type="email" class="setBorder-secondary" id="inputEmail" placeholder="Email" required="required">
             </div>
             <div>
               <button type="submit" class="btn-secondary" id="signUp-btn">Sign Up</button>
@@ -47,94 +49,44 @@
     </div>
     <!-- end of FORM -->
 
-    <!-- showcase -->
-    <div class="container-big my-2 display_none">
+    <!-- WELCOME -->
+    <div class="container-medium setBorder-primary my-3 mx-1 px-1 bg-black display_none" id="welcomeDiv">
+      <div class="text-center text-color-2">
+        <p class="titleBig m-1">Welcome</p>
+        <p class="titleSmall">In this website you can award prizes by randomly picking a winner from a list of people.</p>
+        <p class="titleSmall">But first, we need to generate said list.</p>
+        <p class="titleSmall mt-2">Select an option to begin:</p>
+      </div>
       <div class="flex-media">
+        <button class="btn-secondary m-1" id="openForm-btn">REGISTER MANUALLY</button>
+        <button class="btn-secondary m-1" id="loadFile-btn">LOAD FROM EXAMPLE FILE</button>
+      </div>
+    </div>
+    <!-- end of WELCOME -->
 
-        <div class="card">
-          <img src="./img/prizes/1.jpg" alt="">
-          <div class="cardDescription">
-            <p class="cardTitle">Prize 1</p>
-            <p class="cardText">Description</p>
-          </div>
-        </div>
-        <div class="card">
-          <img src="./img/prizes/1.jpg" alt="">
-          <div class="cardDescription">
-            <p class="cardTitle">Prize 1</p>
-            <p class="cardText">Description</p>
-          </div>
-        </div>
-
+    <!-- box -->
+    <div class="container-medium setBorder-primary m-1 px-1 bg-black">
+      <div class="text-center text-color-2">
+        <p class="titleSmall mt-2">People on the list: <span id="peopleListCounter">0</span></p>
+        <p class="titleSmall my-1">Prizes available: <span id="prizeCounter">0</span></p>
+      </div>
+      <div class="flex-col-center">
+        <button class="btn-secondary mb-1" id="reset-btn">RESTART</button>
+        <button class="btn-secondary m-1" id="pickWinner-btn">PICK WINNER</button>
+      </div>
+    </div>
+    <!-- end of box -->
+    
+    <!-- showcase -->
+    <div class="container-big my-2">
+      <div class="flex-media" id="winnerDiv">
       </div>
     </div>
     <!-- end of showcase -->
 
-    <!-- buttons & COUNTERS-->
-    <div class="container-100width my-2 display_none">
-      <div class="flex-col-center">
-        <div class="my-1 text-color-2">
-          <p class="titleSmall">People participating: <span id="counter_people">0</span></p>
-          <p class="titleSmall">Prizes available: <span id="counter_prizes">0</span> || Remaining: <span id="counter_prizes_remaining">0</span></p>
-        </div>
-        <div class="my-1">
-          <button class="btn-secondary mx-1">LOAD FILE</button>
-          <button class="btn-secondary mx-1">LOAD LS</button>
-          <button class="btn-secondary mx-1">BEGIN</button>
-        </div>
-      </div>
-    </div>
-    <!-- end of BUTTONS & COUNTERS-->
-
-    <!--  -->
-    <div class="container-medium setBorder-primary my-3 bg-black">
-      <p class="titleBig text-center text-color-2 m-1">Welcome</p>
-      <p class="titleSmall text-center text-color-2">In this website you can award prizes by randomly picking a winner from a list of people.</p>
-      <p class="titleSmall text-center text-color-2">But first, we need to generate said list of people.</p>
-      <p class="titleSmall text-center text-color-2 mt-2">Select an option to begin:</p>
-      <div class="flex-media">
-        <button class="btn-secondary m-1">LOAD FROM EXAMPLE FILE</button>
-        <button class="btn-secondary m-1">REGISTER MANUALLY</button>
-      </div>
-    </div>
-    <!--  -->
     
-<!-- counter, sweepstake, winner display -->
-<!-- <div class="container-100width flex-col-center m-2">
-  <div class="setBorder-primary">
-    <div class="container-small setBorder-secondary">
-      <p class="titleSmall">Personas anotadas hasta el momento: <span id="signUpCounter">0</span></p>
-      <button class="btn-secondary" id="readFromFile-btn">Cargar archivo ejemplo</button>
-      <button class="btn-secondary" id="readFromLocalStorage-btn">Cargar local storage</button>
-      <p>Cantidad maxima de premios: 5</p>
-      <button class="btn-secondary" id="pickWinner-btn">Sortear!</button>
-    </div>
-  </div>
-  <div class="" id="winnerDiv">
-    <div class="container-small setBorder-primary">
-      <p class="titleBig">Saliste Sorteado!</p>
-      <p class="titleSmall">Nombre Apellido</p>
-      <p class="">Tel: </p>
-      <p class="">Email: </p>
-    </div>
-  </div>
-</div> -->
-<!-- end of counter, sweepstake, winner display -->
-
-<!-- display all winners -->
-<!-- <div class="setBorder-primary">
-  <div class="">
-    <button class="btn-secondary" id="resetWinners-btn">Reiniciar Ganadores</button>
-  </div>
-  <div class="">
-    <div class="" id="winnerCardsDiv">
-    </div>
-  </div>
-</div> -->
-<!-- end of diplay all winners -->
-
-
   </main>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="./js/script.js"></script>
 </body> 

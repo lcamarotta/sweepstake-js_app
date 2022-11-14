@@ -1,802 +1,402 @@
 [
 	{
-		"name": "Hoyt",
-		"name1": "Barnett",
-		"numberrange": 65,
+		"firstname": "Hoyt",
+		"lastname": "Barnett",
+		"age": "65",
 		"phone": "857-5063",
 		"email": "enim@protonmail.couk",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Brittany",
-		"name1": "Dean",
-		"numberrange": 38,
+		"firstname": "Brittany",
+		"lastname": "Dean",
+		"age": "38",
 		"phone": "244-1885",
 		"email": "nunc@aol.edu",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Fritz",
-		"name1": "Garcia",
-		"numberrange": 25,
+		"firstname": "Fritz",
+		"lastname": "Garcia",
+		"age": "25",
 		"phone": "234-0015",
 		"email": "amet.faucibus@outlook.ca",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Chester",
-		"name1": "Rosa",
-		"numberrange": 74,
+		"firstname": "Chester",
+		"lastname": "Rosa",
+		"age": "74",
 		"phone": "631-4986",
 		"email": "sem.molestie@outlook.edu",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Alexandra",
-		"name1": "Fuentes",
-		"numberrange": 52,
+		"firstname": "Alexandra",
+		"lastname": "Fuentes",
+		"age": "52",
 		"phone": "955-1352",
 		"email": "risus@icloud.net",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Ashely",
-		"name1": "Morales",
-		"numberrange": 43,
+		"firstname": "Ashely",
+		"lastname": "Morales",
+		"age": "43",
 		"phone": "346-8467",
 		"email": "placerat@yahoo.org",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Kimberly",
-		"name1": "Stewart",
-		"numberrange": 19,
+		"firstname": "Kimberly",
+		"lastname": "Stewart",
+		"age": "19",
 		"phone": "777-4701",
 		"email": "tincidunt.neque.vitae@google.edu",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Louis",
-		"name1": "Dunlap",
-		"numberrange": 41,
+		"firstname": "Louis",
+		"lastname": "Dunlap",
+		"age": "41",
 		"phone": "586-4466",
 		"email": "pellentesque.eget@aol.net",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Kerry",
-		"name1": "Cummings",
-		"numberrange": 35,
+		"firstname": "Kerry",
+		"lastname": "Cummings",
+		"age": "35",
 		"phone": "992-5307",
 		"email": "duis.ac.arcu@outlook.org",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Sylvia",
-		"name1": "Wiggins",
-		"numberrange": 72,
+		"firstname": "Sylvia",
+		"lastname": "Wiggins",
+		"age": "72",
 		"phone": "534-3134",
 		"email": "nec@icloud.com",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Carson",
-		"name1": "Chaney",
-		"numberrange": 46,
+		"firstname": "Carson",
+		"lastname": "Chaney",
+		"age": "46",
 		"phone": "846-1916",
 		"email": "cursus@google.net",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Adrienne",
-		"name1": "Mcdowell",
-		"numberrange": 44,
+		"firstname": "Adrienne",
+		"lastname": "Mcdowell",
+		"age": "44",
 		"phone": "346-0758",
 		"email": "aliquet.molestie@aol.edu",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Reese",
-		"name1": "Rosario",
-		"numberrange": 65,
+		"firstname": "Reese",
+		"lastname": "Rosario",
+		"age": "65",
 		"phone": "445-8345",
 		"email": "erat.semper@google.ca",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Rajah",
-		"name1": "Ochoa",
-		"numberrange": 37,
+		"firstname": "Rajah",
+		"lastname": "Ochoa",
+		"age": "37",
 		"phone": "807-2647",
 		"email": "non@hotmail.com",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Thor",
-		"name1": "Walker",
-		"numberrange": 61,
+		"firstname": "Thor",
+		"lastname": "Walker",
+		"age": "61",
 		"phone": "121-1433",
 		"email": "duis.sit@outlook.com",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Daphne",
-		"name1": "Kelley",
-		"numberrange": 45,
+		"firstname": "Daphne",
+		"lastname": "Kelley",
+		"age": "45",
 		"phone": "373-7348",
 		"email": "pharetra@outlook.net",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Jamal",
-		"name1": "Mcfadden",
-		"numberrange": 28,
+		"firstname": "Jamal",
+		"lastname": "Mcfadden",
+		"age": "28",
 		"phone": "378-3845",
 		"email": "dui.nec.tempus@google.com",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Allistair",
-		"name1": "Burton",
-		"numberrange": 40,
+		"firstname": "Allistair",
+		"lastname": "Burton",
+		"age": "40",
 		"phone": "377-6730",
 		"email": "non.enim@google.edu",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Raja",
-		"name1": "Houston",
-		"numberrange": 66,
+		"firstname": "Raja",
+		"lastname": "Houston",
+		"age": "66",
 		"phone": "440-5412",
 		"email": "sit.amet@outlook.couk",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Tate",
-		"name1": "Christensen",
-		"numberrange": 77,
+		"firstname": "Tate",
+		"lastname": "Christensen",
+		"age": "77",
 		"phone": "225-0367",
 		"email": "maecenas.ornare.egestas@protonmail.net",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Dustin",
-		"name1": "Ellison",
-		"numberrange": 59,
+		"firstname": "Dustin",
+		"lastname": "Ellison",
+		"age": "59",
 		"phone": "454-3784",
 		"email": "senectus.et.netus@aol.com",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Vladimir",
-		"name1": "Sosa",
-		"numberrange": 75,
+		"firstname": "Vladimir",
+		"lastname": "Sosa",
+		"age": "75",
 		"phone": "323-0901",
 		"email": "elit.sed@yahoo.org",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Abel",
-		"name1": "Melton",
-		"numberrange": 79,
+		"firstname": "Abel",
+		"lastname": "Melton",
+		"age": "79",
 		"phone": "467-7816",
 		"email": "amet@aol.couk",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Cassandra",
-		"name1": "Walsh",
-		"numberrange": 57,
+		"firstname": "Cassandra",
+		"lastname": "Walsh",
+		"age": "57",
 		"phone": "251-2044",
 		"email": "in.faucibus.morbi@outlook.couk",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Eve",
-		"name1": "Hughes",
-		"numberrange": 80,
+		"firstname": "Eve",
+		"lastname": "Hughes",
+		"age": "80",
 		"phone": "122-2697",
 		"email": "dignissim.magna@hotmail.couk",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Nero",
-		"name1": "Foster",
-		"numberrange": 57,
+		"firstname": "Nero",
+		"lastname": "Foster",
+		"age": "57",
 		"phone": "620-1221",
 		"email": "lorem.semper.auctor@hotmail.org",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Cara",
-		"name1": "Herrera",
-		"numberrange": 69,
+		"firstname": "Cara",
+		"lastname": "Herrera",
+		"age": "69",
 		"phone": "836-8302",
 		"email": "nibh.sit@aol.net",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Forrest",
-		"name1": "Schwartz",
-		"numberrange": 44,
+		"firstname": "Forrest",
+		"lastname": "Schwartz",
+		"age": "44",
 		"phone": "131-7127",
 		"email": "dignissim.maecenas@google.org",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Magee",
-		"name1": "Branch",
-		"numberrange": 52,
+		"firstname": "Magee",
+		"lastname": "Branch",
+		"age": "52",
 		"phone": "617-5374",
 		"email": "condimentum@yahoo.com",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Paloma",
-		"name1": "Rodgers",
-		"numberrange": 51,
+		"firstname": "Paloma",
+		"lastname": "Rodgers",
+		"age": "51",
 		"phone": "719-5381",
 		"email": "primis.in.faucibus@hotmail.edu",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Andrew",
-		"name1": "Dunlap",
-		"numberrange": 50,
+		"firstname": "Andrew",
+		"lastname": "Dunlap",
+		"age": "50",
 		"phone": "726-6287",
 		"email": "pellentesque.massa.lobortis@hotmail.com",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Audra",
-		"name1": "Bender",
-		"numberrange": 66,
+		"firstname": "Audra",
+		"lastname": "Bender",
+		"age": "66",
 		"phone": "176-5143",
 		"email": "nulla@google.net",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Chester",
-		"name1": "Hahn",
-		"numberrange": 68,
+		"firstname": "Chester",
+		"lastname": "Hahn",
+		"age": "68",
 		"phone": "880-6177",
 		"email": "a.dui.cras@protonmail.edu",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Germaine",
-		"name1": "Burks",
-		"numberrange": 66,
+		"firstname": "Germaine",
+		"lastname": "Burks",
+		"age": "66",
 		"phone": "478-0951",
 		"email": "dui.semper@google.edu",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Mona",
-		"name1": "Wheeler",
-		"numberrange": 60,
+		"firstname": "Mona",
+		"lastname": "Wheeler",
+		"age": "60",
 		"phone": "327-6172",
 		"email": "convallis@icloud.edu",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Tarik",
-		"name1": "Higgins",
-		"numberrange": 51,
+		"firstname": "Tarik",
+		"lastname": "Higgins",
+		"age": "51",
 		"phone": "824-8200",
 		"email": "tempus.non.lacinia@outlook.couk",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Alfreda",
-		"name1": "Burnett",
-		"numberrange": 54,
+		"firstname": "Alfreda",
+		"lastname": "Burnett",
+		"age": "54",
 		"phone": "833-5661",
 		"email": "iaculis@protonmail.com",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Kevyn",
-		"name1": "Preston",
-		"numberrange": 60,
+		"firstname": "Kevyn",
+		"lastname": "Preston",
+		"age": "60",
 		"phone": "774-3368",
 		"email": "libero.integer.in@protonmail.com",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Ariana",
-		"name1": "Waller",
-		"numberrange": 70,
+		"firstname": "Ariana",
+		"lastname": "Waller",
+		"age": "70",
 		"phone": "686-7316",
 		"email": "feugiat.non@aol.edu",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Carson",
-		"name1": "Conway",
-		"numberrange": 73,
+		"firstname": "Carson",
+		"lastname": "Conway",
+		"age": "73",
 		"phone": "249-7056",
 		"email": "ultrices.posuere.cubilia@icloud.com",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Blaze",
-		"name1": "Cote",
-		"numberrange": 75,
+		"firstname": "Blaze",
+		"lastname": "Cote",
+		"age": "75",
 		"phone": "339-8743",
 		"email": "feugiat.placerat@aol.ca",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Leo",
-		"name1": "Riggs",
-		"numberrange": 46,
+		"firstname": "Leo",
+		"lastname": "Riggs",
+		"age": "46",
 		"phone": "581-5735",
 		"email": "eget.laoreet@yahoo.ca",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Kylynn",
-		"name1": "Hodges",
-		"numberrange": 18,
+		"firstname": "Kylynn",
+		"lastname": "Hodges",
+		"age": "18",
 		"phone": "676-0475",
 		"email": "nulla.ante@hotmail.net",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Christen",
-		"name1": "Bryant",
-		"numberrange": 54,
+		"firstname": "Christen",
+		"lastname": "Bryant",
+		"age": "54",
 		"phone": "562-7747",
 		"email": "non@yahoo.org",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Linus",
-		"name1": "Herring",
-		"numberrange": 20,
+		"firstname": "Linus",
+		"lastname": "Herring",
+		"age": "20",
 		"phone": "734-7822",
 		"email": "non.leo.vivamus@hotmail.couk",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Genevieve",
-		"name1": "Fuller",
-		"numberrange": 51,
+		"firstname": "Genevieve",
+		"lastname": "Fuller",
+		"age": "51",
 		"phone": "221-2843",
 		"email": "eleifend.egestas@outlook.org",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Virginia",
-		"name1": "Potter",
-		"numberrange": 55,
+		"firstname": "Virginia",
+		"lastname": "Potter",
+		"age": "55",
 		"phone": "482-5434",
 		"email": "blandit.at.nisi@google.couk",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Bruno",
-		"name1": "Nash",
-		"numberrange": 36,
+		"firstname": "Bruno",
+		"lastname": "Nash",
+		"age": "36",
 		"phone": "104-6144",
 		"email": "sit@google.com",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Shoshana",
-		"name1": "Sampson",
-		"numberrange": 43,
+		"firstname": "Shoshana",
+		"lastname": "Sampson",
+		"age": "43",
 		"phone": "812-6709",
 		"email": "vivamus.sit@icloud.net",
-		"boolean": false
+		"isWinner": false
 	},
 	{
-		"name": "Jana",
-		"name1": "Sandoval",
-		"numberrange": 77,
+		"firstname": "Jana",
+		"lastname": "Sandoval",
+		"age": "43",
 		"phone": "376-8735",
 		"email": "pede.suspendisse@hotmail.net",
-		"boolean": false
-	},
-	{
-		"name": "Ulysses",
-		"name1": "Cochran",
-		"numberrange": 61,
-		"phone": "287-5658",
-		"email": "donec@aol.couk",
-		"boolean": false
-	},
-	{
-		"name": "Aurelia",
-		"name1": "Roy",
-		"numberrange": 65,
-		"phone": "957-3136",
-		"email": "eleifend@yahoo.com",
-		"boolean": false
-	},
-	{
-		"name": "Cole",
-		"name1": "Baldwin",
-		"numberrange": 29,
-		"phone": "901-6754",
-		"email": "magna.ut.tincidunt@hotmail.ca",
-		"boolean": false
-	},
-	{
-		"name": "Colorado",
-		"name1": "Nelson",
-		"numberrange": 79,
-		"phone": "572-3627",
-		"email": "nec.cursus@icloud.org",
-		"boolean": false
-	},
-	{
-		"name": "Eugenia",
-		"name1": "Miles",
-		"numberrange": 21,
-		"phone": "750-2118",
-		"email": "phasellus.elit.pede@google.ca",
-		"boolean": false
-	},
-	{
-		"name": "Justine",
-		"name1": "Fuller",
-		"numberrange": 57,
-		"phone": "632-6677",
-		"email": "est.vitae.sodales@google.couk",
-		"boolean": false
-	},
-	{
-		"name": "Xander",
-		"name1": "Glass",
-		"numberrange": 78,
-		"phone": "515-3837",
-		"email": "cras.vulputate@outlook.edu",
-		"boolean": false
-	},
-	{
-		"name": "Gay",
-		"name1": "Steele",
-		"numberrange": 49,
-		"phone": "336-5545",
-		"email": "phasellus@outlook.net",
-		"boolean": false
-	},
-	{
-		"name": "Farrah",
-		"name1": "Blanchard",
-		"numberrange": 30,
-		"phone": "712-0796",
-		"email": "consequat@aol.couk",
-		"boolean": false
-	},
-	{
-		"name": "Jessica",
-		"name1": "Nixon",
-		"numberrange": 59,
-		"phone": "955-7083",
-		"email": "vulputate.lacus.cras@outlook.couk",
-		"boolean": false
-	},
-	{
-		"name": "Lael",
-		"name1": "Ellison",
-		"numberrange": 28,
-		"phone": "980-6650",
-		"email": "diam.at@yahoo.couk",
-		"boolean": false
-	},
-	{
-		"name": "Gil",
-		"name1": "Rojas",
-		"numberrange": 68,
-		"phone": "443-3325",
-		"email": "odio.a.purus@google.couk",
-		"boolean": false
-	},
-	{
-		"name": "Alisa",
-		"name1": "Carver",
-		"numberrange": 29,
-		"phone": "257-2904",
-		"email": "nisl.maecenas@yahoo.net",
-		"boolean": false
-	},
-	{
-		"name": "Heather",
-		"name1": "Nixon",
-		"numberrange": 68,
-		"phone": "676-8056",
-		"email": "lectus.quis.massa@icloud.couk",
-		"boolean": false
-	},
-	{
-		"name": "Odette",
-		"name1": "Osborn",
-		"numberrange": 62,
-		"phone": "638-2241",
-		"email": "pellentesque.habitant@protonmail.edu",
-		"boolean": false
-	},
-	{
-		"name": "Gray",
-		"name1": "Wiggins",
-		"numberrange": 72,
-		"phone": "342-2107",
-		"email": "odio.nam@outlook.com",
-		"boolean": false
-	},
-	{
-		"name": "Kelsey",
-		"name1": "Watson",
-		"numberrange": 42,
-		"phone": "428-1841",
-		"email": "vel.mauris.integer@protonmail.couk",
-		"boolean": false
-	},
-	{
-		"name": "Alec",
-		"name1": "Whitfield",
-		"numberrange": 67,
-		"phone": "677-4747",
-		"email": "nulla.aliquet@icloud.ca",
-		"boolean": false
-	},
-	{
-		"name": "James",
-		"name1": "Chase",
-		"numberrange": 40,
-		"phone": "157-1423",
-		"email": "penatibus@hotmail.com",
-		"boolean": false
-	},
-	{
-		"name": "Sawyer",
-		"name1": "Schroeder",
-		"numberrange": 20,
-		"phone": "218-7172",
-		"email": "in@outlook.couk",
-		"boolean": false
-	},
-	{
-		"name": "Omar",
-		"name1": "Knight",
-		"numberrange": 37,
-		"phone": "388-8152",
-		"email": "augue.eu.tempor@outlook.edu",
-		"boolean": false
-	},
-	{
-		"name": "Cynthia",
-		"name1": "Raymond",
-		"numberrange": 74,
-		"phone": "838-1151",
-		"email": "mauris.morbi@icloud.edu",
-		"boolean": false
-	},
-	{
-		"name": "Tara",
-		"name1": "Santos",
-		"numberrange": 45,
-		"phone": "521-6310",
-		"email": "cursus.integer@hotmail.couk",
-		"boolean": false
-	},
-	{
-		"name": "Portia",
-		"name1": "Duncan",
-		"numberrange": 48,
-		"phone": "867-8417",
-		"email": "risus@aol.ca",
-		"boolean": false
-	},
-	{
-		"name": "Kuame",
-		"name1": "Mueller",
-		"numberrange": 23,
-		"phone": "450-2279",
-		"email": "sit.amet@icloud.ca",
-		"boolean": false
-	},
-	{
-		"name": "Hedy",
-		"name1": "Vincent",
-		"numberrange": 20,
-		"phone": "337-4851",
-		"email": "etiam@hotmail.edu",
-		"boolean": false
-	},
-	{
-		"name": "Hillary",
-		"name1": "Case",
-		"numberrange": 63,
-		"phone": "657-4635",
-		"email": "sed.libero@aol.ca",
-		"boolean": false
-	},
-	{
-		"name": "Hedda",
-		"name1": "Randall",
-		"numberrange": 24,
-		"phone": "955-7307",
-		"email": "rhoncus.id@icloud.net",
-		"boolean": false
-	},
-	{
-		"name": "Nora",
-		"name1": "Holcomb",
-		"numberrange": 40,
-		"phone": "174-6079",
-		"email": "eu@yahoo.edu",
-		"boolean": false
-	},
-	{
-		"name": "Geoffrey",
-		"name1": "Justice",
-		"numberrange": 29,
-		"phone": "712-2781",
-		"email": "blandit.at@icloud.org",
-		"boolean": false
-	},
-	{
-		"name": "Carlos",
-		"name1": "Franks",
-		"numberrange": 58,
-		"phone": "733-8227",
-		"email": "sit.amet.risus@aol.net",
-		"boolean": false
-	},
-	{
-		"name": "William",
-		"name1": "Bryant",
-		"numberrange": 58,
-		"phone": "856-1843",
-		"email": "nunc.sed.libero@outlook.net",
-		"boolean": false
-	},
-	{
-		"name": "Allistair",
-		"name1": "Cochran",
-		"numberrange": 69,
-		"phone": "240-9242",
-		"email": "fringilla.ornare@protonmail.net",
-		"boolean": false
-	},
-	{
-		"name": "Ruth",
-		"name1": "Matthews",
-		"numberrange": 53,
-		"phone": "133-4097",
-		"email": "quisque@hotmail.couk",
-		"boolean": false
-	},
-	{
-		"name": "Jordan",
-		"name1": "Vaughn",
-		"numberrange": 43,
-		"phone": "620-0285",
-		"email": "leo.morbi.neque@google.edu",
-		"boolean": false
-	},
-	{
-		"name": "Jameson",
-		"name1": "Pollard",
-		"numberrange": 30,
-		"phone": "123-9474",
-		"email": "malesuada@yahoo.couk",
-		"boolean": false
-	},
-	{
-		"name": "Madison",
-		"name1": "Fox",
-		"numberrange": 53,
-		"phone": "752-2326",
-		"email": "dignissim@yahoo.com",
-		"boolean": false
-	},
-	{
-		"name": "Rina",
-		"name1": "Daniel",
-		"numberrange": 56,
-		"phone": "517-7113",
-		"email": "nascetur@hotmail.com",
-		"boolean": false
-	},
-	{
-		"name": "Maia",
-		"name1": "Holmes",
-		"numberrange": 74,
-		"phone": "280-6345",
-		"email": "non.hendrerit@hotmail.org",
-		"boolean": false
-	},
-	{
-		"name": "Faith",
-		"name1": "Thornton",
-		"numberrange": 55,
-		"phone": "484-2647",
-		"email": "aliquam.vulputate.ullamcorper@aol.couk",
-		"boolean": false
-	},
-	{
-		"name": "Mira",
-		"name1": "Dodson",
-		"numberrange": 25,
-		"phone": "548-2747",
-		"email": "eu.odio@aol.couk",
-		"boolean": false
-	},
-	{
-		"name": "Caldwell",
-		"name1": "Hebert",
-		"numberrange": 68,
-		"phone": "684-8261",
-		"email": "torquent@icloud.couk",
-		"boolean": false
-	},
-	{
-		"name": "Sydney",
-		"name1": "O'Neill",
-		"numberrange": 71,
-		"phone": "428-2083",
-		"email": "porta.elit@yahoo.ca",
-		"boolean": false
-	},
-	{
-		"name": "Vernon",
-		"name1": "Clements",
-		"numberrange": 77,
-		"phone": "822-9817",
-		"email": "ultrices@hotmail.org",
-		"boolean": false
-	},
-	{
-		"name": "Martha",
-		"name1": "Mckee",
-		"numberrange": 33,
-		"phone": "834-5642",
-		"email": "non.ante@yahoo.net",
-		"boolean": false
-	},
-	{
-		"name": "Maxine",
-		"name1": "Moran",
-		"numberrange": 22,
-		"phone": "542-3596",
-		"email": "ac@protonmail.net",
-		"boolean": false
-	},
-	{
-		"name": "Hammett",
-		"name1": "Lucas",
-		"numberrange": 37,
-		"phone": "212-0160",
-		"email": "praesent.eu@yahoo.ca",
-		"boolean": false
-	},
-	{
-		"name": "Yuli",
-		"name1": "Mercer",
-		"numberrange": 45,
-		"phone": "881-7831",
-		"email": "magna.a@hotmail.edu",
-		"boolean": false
-	},
-	{
-		"name": "Xena",
-		"name1": "Byers",
-		"numberrange": 79,
-		"phone": "666-2867",
-		"email": "molestie.tortor@yahoo.edu",
-		"boolean": false
-	},
-	{
-		"name": "Zahir",
-		"name1": "Bowen",
-		"numberrange": 34,
-		"phone": "732-3313",
-		"email": "risus.quisque.libero@aol.edu",
-		"boolean": false
+		"isWinner": false
 	}
 ]

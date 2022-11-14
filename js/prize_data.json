@@ -1,27 +1,27 @@
 [
   {
-  "name":"Prize 1",
-  "description":"Supercar",
+  "id":"1",
+  "name":"Supercar",
   "picture":"1.jpg"
   },
   {
-  "name":"Prize 2",
-  "description":"Motorbike",
+  "id":"2",
+  "name":"Motorbike",
   "picture":"2.jpg"
   },
   {
-  "name":"Prize 3",
-  "description":"PS5",
+  "id":"3",
+  "name":"PS5",
   "picture":"3.jpg"
   },
   {
-  "name":"Prize 1",
-  "description":"TV",
+  "id":"4",
+  "name":"TV",
   "picture":"4.jpg"
   },
   {
-  "name":"Prize 5",
-  "description":"Home theater",
+  "id":"5",
+  "name":"Home theater",
   "picture":"5.jpg"
   }
 ]

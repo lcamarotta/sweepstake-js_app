@@ -26,6 +26,9 @@
       }      
     }
   }
+  @media screen and (min-width: $breakpoint-2) {
+    min-width: 300px;
+  }
 }
 
 //cards
