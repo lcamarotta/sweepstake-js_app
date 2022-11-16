@@ -21,11 +21,16 @@ class prize {
 }
 //get DOM elements
 const loadFile_btn = document.getElementById("loadFile-btn")      //LOAD FILE button
-const openForm_btn = document.getElementById("openForm-btn")      //MANUAL REGISTER button
 const age = document.getElementById("inputAge")                   //AGE form field
 const signUp_btn = document.getElementById("signUp-btn")          //SIGN UP form button
 const pickWinner_btn = document.getElementById("pickWinner-btn")  //PICK WINNER form button
 const reset_btn = document.getElementById("reset-btn")            //RESET button
+
+const openForm_btn = setTimeout(() => {
+  const openForm = document.getElementById("openForm-btn")      //MANUAL REGISTER button
+  return openForm
+}, "1000")
+
 
 //code
 let peopleList = readFromLocalStorage('peopleList') || []
@@ -113,14 +118,15 @@ pickWinner_btn.onclick = () => {
       Swal.fire({
         title: 'Wait!',
         text: 'Everyone on the list had won at least once.',
-        icon: 'warning',
+        icon: 'info',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'RESTART'
-      }).then(() => {
-        localStorage.clear()
-        location.reload()
+        confirmButtonText: 'Restart'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          reset()
+        }
       })
     }
   } else {
@@ -134,24 +140,30 @@ pickWinner_btn.onclick = () => {
 
 //reset button
 reset_btn.onclick = () => {
+  reset()
+} 
+
+//functions
+function reset(){
   Swal.fire({
-    title: 'Wait!',
-    text: 'Click Ok if you want to start over. This will erase current people list.',
+    title: 'Caution!',
+    text: 'Click Ok to start over. This will erase current people list.',
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#EB6440',
     cancelButtonColor: '#c8ddde',
     confirmButtonText: 'Ok'
-  }).then(() => {
-      localStorage.removeItem('peopleList')
-      localStorage.removeItem('loadPeopleByForm_flag')
-      localStorage.removeItem('loadPeopleByFile_flag')
-      location.reload()
+  }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem('peopleList')
+        localStorage.removeItem('loadPeopleByForm_flag')
+        localStorage.removeItem('loadPeopleByFile_flag')
+        location.reload()
+      }
     } 
   )
-} 
+}
 
-//functions
 function getRandomInt(maxNum) {
   return Math.floor(Math.random() * maxNum);
 }
