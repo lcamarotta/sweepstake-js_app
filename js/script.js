@@ -238,9 +238,11 @@ function hideWelcomeDiv () {
 }
 
 function renderLastWinner(winner){
+  display_toggle('winnerDivParent')
   const winnerDiv = document.getElementById("winnerDiv")
   const imgPath = `./img/prizes/${prizeList[availablePrizes-1].picture}`
   const prizeName = prizeList[availablePrizes-1].name
+  const prizeID = prizeList[availablePrizes-1].id
   const winnerName = `${peopleList[winner].firstname} ${peopleList[winner].lastname}`
   winnerDiv.innerHTML = `
                           <div class="card">
@@ -248,8 +250,12 @@ function renderLastWinner(winner){
                             <div class="cardDescription">
                               <p class="cardTitle">${winnerName}</p>
                               <p class="cardText">You WON!</p>
+                              <p class="cardText">Prize Number ${prizeID}</p>
                               <p class="cardTitle">${prizeName}</p>
                             </div>
+                          </div>
+                          <div>
+                            <button type="button" class="btn-secondary px-2 py-1" onclick="display_toggle('winnerDivParent')">GO BACK</button>
                           </div>
                         `
 }
