@@ -42,6 +42,7 @@
             </div>
             <div>
               <button type="submit" class="btn-secondary" id="signUp-btn">Sign Up</button>
+              <button type="button" class="btn-secondary" onclick="display_toggle('register-form')">Cancel</button>
             </div>
           </form>
         </div>
@@ -58,7 +59,7 @@
         <p class="titleSmall mt-2">Select an option to begin:</p>
       </div>
       <div class="flex-media">
-        <button class="btn-secondary m-1" id="openForm-btn">REGISTER MANUALLY</button>
+        <button class="btn-secondary m-1" onclick="display_toggle('register-form')">REGISTER MANUALLY</button>
         <button class="btn-secondary m-1" id="loadFile-btn">LOAD FROM EXAMPLE FILE</button>
       </div>
     </div>
@@ -77,12 +78,12 @@
     </div>
     <!-- end of box -->
     
-    <!-- showcase -->
+    <!-- show winner -->
     <div class="container-big my-2">
       <div class="flex-media" id="winnerDiv">
       </div>
     </div>
-    <!-- end of showcase -->
+    <!-- end of show winner -->
 
     
   </main>

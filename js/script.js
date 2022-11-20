@@ -26,12 +26,6 @@ const signUp_btn = document.getElementById("signUp-btn")          //SIGN UP form
 const pickWinner_btn = document.getElementById("pickWinner-btn")  //PICK WINNER form button
 const reset_btn = document.getElementById("reset-btn")            //RESET button
 
-const openForm_btn = setTimeout(() => {
-  const openForm = document.getElementById("openForm-btn")      //MANUAL REGISTER button
-  return openForm
-}, "1000")
-
-
 //code
 let peopleList = readFromLocalStorage('peopleList') || []
 let prizeList = readFromLocalStorage('prizeList') || []
@@ -55,12 +49,6 @@ loadFile_btn.onclick = () => {
   }).showToast();
   check_flags_and_load_html()
   
-}
-
-//open form
-openForm_btn.onclick = () => {
-  const register_form = document.getElementById("register-form")
-  register_form.classList.remove('display_none')
 }
 
 //force age range
@@ -101,6 +89,7 @@ pickWinner_btn.onclick = () => {
     )
     return
   }
+  hideWelcomeDiv()
   if (availablePrizes) {
     let winner
     let check_NoWinners = peopleList.some((i) => i.isWinner === false) //there must be at least one person.isWinner == false
@@ -204,14 +193,16 @@ function readFromFile(filePath, option){
   .then( (response) => response.json() )
   .then( (dataArray) => {
     for (const object of dataArray) {
-      if (option === 'peopleData') {
-        pushPersonToPeopleList(object)
-      } else {
-        pushPrizeToList(object)
-      }
+      if (option === 'peopleData') pushPersonToPeopleList(object)
+      if (option === 'prizeData')  pushPrizeToList(object)
     }
     updateCounter()
   } )
+}
+
+function display_toggle(dom_element) {
+  const element = document.getElementById(dom_element)
+  element.classList.toggle('display_none')
 }
 
 function check_flags_and_load_html(){
@@ -226,18 +217,24 @@ function check_flags_and_load_html(){
     welcomeDiv.innerHTML =  ` <div class="text-center text-color-2">
                                 <p class="titleBig m-1">Welcome</p>
                                 <p class="titleSmall">Add as manny people as you please.</p>
+                                <p class="titleSmall">When finished click 'PICK WINNER'.</p>
                               </div>
                               <div class="flex-media">
-                                <button class="btn-secondary m-1" id="openForm-btn">REGISTER</button>
+                                <button class="btn-secondary m-1" onclick="display_toggle('register-form')">REGISTER</button>
                               </div>
                             `
     welcomeDiv.classList.remove('display_none')
     return
   }
   if (loadPeopleByFile_flag) {
-    welcomeDiv.innerHTML = ''
-    welcomeDiv.classList = ''
+    hideWelcomeDiv()
   }
+}
+
+function hideWelcomeDiv () {
+  const welcomeDiv = document.getElementById('welcomeDiv')
+  welcomeDiv.innerHTML = ''
+  welcomeDiv.classList = 'display_none'
 }
 
 function renderLastWinner(winner){
@@ -249,9 +246,9 @@ function renderLastWinner(winner){
                           <div class="card">
                             <img src="${imgPath}" alt="Prize Picture">
                             <div class="cardDescription">
-                              <p class="cardTitle">You WON!</p>
-                              <p class="cardText">${prizeName}</p>
                               <p class="cardTitle">${winnerName}</p>
+                              <p class="cardText">You WON!</p>
+                              <p class="cardTitle">${prizeName}</p>
                             </div>
                           </div>
                         `
