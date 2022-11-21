@@ -16,7 +16,7 @@ class person {
 let prizeList = []
 let winnersCounter = 0
 let availablePrizes = 0
-let peopleList = readFromLocalStorage('peopleList') || []
+let peopleList = readFromsessionStorage('peopleList') || []
 
 fetch('./js/prize_data.json')
   .then( (response) => response.json() )
@@ -31,8 +31,8 @@ check_flags_and_load_html()
 const loadFile_btn = document.getElementById("loadFile-btn")
 if (loadFile_btn != null) {
   loadFile_btn.onclick = () => {
-    saveToLocalStorage('loadPeopleByFile_flag', true)
-    saveToLocalStorage('loadPeopleByForm_flag', false)
+    saveTosessionStorage('loadPeopleByFile_flag', true)
+    saveTosessionStorage('loadPeopleByForm_flag', false)
     readFromFile('./js/people_data.json')
     Toastify({
       text: "PEOPLE LIST LOADED",
@@ -61,8 +61,8 @@ age.onchange = () => {
 //form signUp button
 const signUp_btn = document.getElementById("signUp-btn")
 signUp_btn.onclick = () => {
-  saveToLocalStorage('loadPeopleByForm_flag', true)
-  saveToLocalStorage('loadPeopleByFile_flag', false)
+  saveTosessionStorage('loadPeopleByForm_flag', true)
+  saveTosessionStorage('loadPeopleByFile_flag', false)
   const phone = document.getElementById("inputPhone")
   const email = document.getElementById("inputEmail")
   const lastname = document.getElementById("inputLastname")
@@ -71,7 +71,7 @@ signUp_btn.onclick = () => {
     const newPerson = new person(firstname.value, lastname.value, age.value, phone.value, email.value) 
     peopleList.push(newPerson)
     updateCounter()
-    saveToLocalStorage('peopleList', peopleList)
+    saveTosessionStorage('peopleList', peopleList)
   }
 }
 
@@ -81,7 +81,7 @@ pickWinner_btn.onclick = () => {
   if (peopleList.length == 0){
     Swal.fire(
       'Error',
-      'People List is empty',
+      'People List is empty. Register or load from file first',
       'error'
     )
     return
@@ -102,15 +102,15 @@ pickWinner_btn.onclick = () => {
     } else {
       Swal.fire({
         title: 'Wait!',
-        text: 'Everyone on the list had won at least once.',
+        text: 'Everyone on the list had already won.',
         icon: 'info',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Restart'
+        confirmButtonText: 'Show Winners'
       }).then((result) => {
         if (result.isConfirmed) {
-          reset()
+          renderWinners()
         }
       })
     }
@@ -122,12 +122,6 @@ pickWinner_btn.onclick = () => {
     )
   }
 }
-
-//reset button
-const reset_btn = document.getElementById("reset-btn")
-reset_btn.onclick = () => {
-  reset()
-} 
 
 //functions
 function reset(){
@@ -141,9 +135,9 @@ function reset(){
     confirmButtonText: 'Ok'
   }).then((result) => {
       if (result.isConfirmed) {
-        localStorage.removeItem('peopleList')
-        localStorage.removeItem('loadPeopleByForm_flag')
-        localStorage.removeItem('loadPeopleByFile_flag')
+        sessionStorage.removeItem('peopleList')
+        sessionStorage.removeItem('loadPeopleByForm_flag')
+        sessionStorage.removeItem('loadPeopleByFile_flag')
         location.reload()
       }
     } 
@@ -165,17 +159,17 @@ function pushPersonToPeopleList(object){
   const {age, email, firstname, lastname, phone} = object
   const newPerson = new person(firstname, lastname, age, phone, email)
   peopleList.push(newPerson)
-  saveToLocalStorage('peopleList', peopleList)
+  saveTosessionStorage('peopleList', peopleList)
   updateCounter()
 }
 
-function saveToLocalStorage(key, value){
-  localStorage.setItem(key, JSON.stringify(value))
+function saveTosessionStorage(key, value){
+  sessionStorage.setItem(key, JSON.stringify(value))
 }
 
-function readFromLocalStorage(key){
-  let dataFromLocalStorage = JSON.parse(localStorage.getItem(key))
-  return dataFromLocalStorage
+function readFromsessionStorage(key){
+  let dataFromsessionStorage = JSON.parse(sessionStorage.getItem(key))
+  return dataFromsessionStorage
 }
 
 function readFromFile(filePath){
@@ -196,8 +190,8 @@ function display_toggle(dom_element) {
 
 function check_flags_and_load_html(){
   const welcomeDiv = document.getElementById('welcomeDiv')
-  const loadPeopleByForm_flag = readFromLocalStorage('loadPeopleByForm_flag') || false
-  const loadPeopleByFile_flag = readFromLocalStorage('loadPeopleByFile_flag') || false
+  const loadPeopleByForm_flag = readFromsessionStorage('loadPeopleByForm_flag') || false
+  const loadPeopleByFile_flag = readFromsessionStorage('loadPeopleByFile_flag') || false
   if (!loadPeopleByFile_flag && !loadPeopleByForm_flag){
     welcomeDiv.classList.remove('display_none')
     return
@@ -247,4 +241,41 @@ function renderLastWinner(winner){
                             <button type="button" class="btn-secondary px-2 py-1" onclick="display_toggle('winnerDivParent')">GO BACK</button>
                           </div>
                         `
+}
+
+function renderWinners(){
+  const allWinnersDiv = document.getElementById("allWinnersDiv")
+  const buttonsDiv = document.getElementById("buttonsDiv")
+  const winnerArray = peopleList.filter( (person) => person.isWinner !== false )
+  if(winnerArray.length === 0){
+    Toastify({
+      text: "No winners yet. Click PICK WINNER first",
+      duration: 5000,
+      style: {
+        background: "linear-gradient(to right, #eb4040, #EB6440)",
+      }
+    }).showToast();
+    return
+  }
+  winnerArray.sort((a, b) => a.isWinner > b.isWinner)
+  winnerArray.forEach(winner => {
+    const imgPath = `./img/prizes/${prizeList[winner.isWinner-1].picture}`
+    const cardContainer = document.createElement("div")
+    cardContainer.innerHTML = `
+                                <div class="card">
+                                  <img src="${imgPath}" alt="Prize Picture">
+                                  <div class="cardDescription">
+                                    <p class="titleSmall">${winner.firstname} ${winner.lastname}</p>
+                                    <p class="cardText">${winner.age} years old</p>
+                                    <p class="cardText">${winner.email}</p>
+                                    <p class="cardText">Phone: ${winner.phone}</p>
+                                    <p class="titleSmall">Winner N°${winner.isWinner}</p>
+                                    <p class="titleSmall">Prize ${prizeList[winner.isWinner-1].name}</p>
+                                  </div>
+                                </div>
+                              `
+    allWinnersDiv.appendChild(cardContainer)
+  });
+  allWinnersDiv.classList.remove('display_none')
+  buttonsDiv.classList.add('display_none')
 }

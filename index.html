@@ -66,14 +66,14 @@
     <!-- end of WELCOME -->
 
     <!-- box -->
-    <div class="container-medium setBorder-primary m-1 px-1 bg-black">
+    <div class="container-medium setBorder-primary m-1 px-1 bg-black" id="buttonsDiv">
       <div class="text-center text-color-2">
         <p class="titleSmall mt-2">People on the list: <span id="peopleListCounter">0</span></p>
         <p class="titleSmall my-1">Prizes available: <span id="prizeCounter">0</span></p>
       </div>
       <div class="flex-col-center">
-        <button class="btn-secondary mb-1" id="reset-btn">RESTART</button>
         <button class="btn-secondary m-1" id="pickWinner-btn">PICK WINNER</button>
+        <button class="btn-secondary m-1" onclick="renderWinners()">SHOW WINNERS</button>
       </div>
     </div>
     <!-- end of box -->
@@ -82,6 +82,9 @@
     <div class="container-full-screen display_none" id="winnerDivParent">
       <div class="flex-col-center" id="winnerDiv">
       </div>
+    </div>
+    <div class="container-big flex-col-center display_none" id="allWinnersDiv">
+      <button class="btn-secondary mb-1" onclick="reset()">RESTART</button>
     </div>
     <!-- end of show winner -->
 
