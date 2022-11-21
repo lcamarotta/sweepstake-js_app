@@ -12,46 +12,41 @@ class person {
     this.isWinner = false;
   }
 }
-class prize {
-  constructor(prize_id, name, pic_path){
-    this.id = prize_id;
-    this.name = name;
-    this.picture = pic_path;
-  }
-}
-//get DOM elements
-const loadFile_btn = document.getElementById("loadFile-btn")      //LOAD FILE button
-const age = document.getElementById("inputAge")                   //AGE form field
-const signUp_btn = document.getElementById("signUp-btn")          //SIGN UP form button
-const pickWinner_btn = document.getElementById("pickWinner-btn")  //PICK WINNER form button
-const reset_btn = document.getElementById("reset-btn")            //RESET button
 
-//code
-let peopleList = readFromLocalStorage('peopleList') || []
-let prizeList = readFromLocalStorage('prizeList') || []
-if(prizeList.length === 0) readFromFile('./js/prize_data.json', 'prizeData')
+let prizeList = []
 let winnersCounter = 0
-let availablePrizes = prizeList.length
-updateCounter()
+let availablePrizes = 0
+let peopleList = readFromLocalStorage('peopleList') || []
+
+fetch('./js/prize_data.json')
+  .then( (response) => response.json() )
+  .then( (dataArray) => {
+    prizeList = dataArray
+    availablePrizes = prizeList.length
+    updateCounter()
+  } )
 check_flags_and_load_html()
 
 //read from file button
-loadFile_btn.onclick = () => {
-  saveToLocalStorage('loadPeopleByFile_flag', true)
-  saveToLocalStorage('loadPeopleByForm_flag', false)
-  readFromFile('./js/people_data.json', 'peopleData')
-  Toastify({
-    text: "PEOPLE LIST LOADED",
-    duration: 4000,
-    style: {
-      background: "linear-gradient(to right, #c8ddde, #3f6264)",
-    }
-  }).showToast();
-  check_flags_and_load_html()
-  
+const loadFile_btn = document.getElementById("loadFile-btn")
+if (loadFile_btn != null) {
+  loadFile_btn.onclick = () => {
+    saveToLocalStorage('loadPeopleByFile_flag', true)
+    saveToLocalStorage('loadPeopleByForm_flag', false)
+    readFromFile('./js/people_data.json')
+    Toastify({
+      text: "PEOPLE LIST LOADED",
+      duration: 4000,
+      style: {
+        background: "linear-gradient(to right, #93d17b, #61d234)",
+      }
+    }).showToast();
+    check_flags_and_load_html()
+  }
 }
 
 //force age range
+const age = document.getElementById("inputAge")
 age.onchange = () => {
   if(age.value < 18){
     age.value = 18
@@ -64,6 +59,7 @@ age.onchange = () => {
 }
 
 //form signUp button
+const signUp_btn = document.getElementById("signUp-btn")
 signUp_btn.onclick = () => {
   saveToLocalStorage('loadPeopleByForm_flag', true)
   saveToLocalStorage('loadPeopleByFile_flag', false)
@@ -80,6 +76,7 @@ signUp_btn.onclick = () => {
 }
 
 //pickWinner button
+const pickWinner_btn = document.getElementById("pickWinner-btn")
 pickWinner_btn.onclick = () => {
   if (peopleList.length == 0){
     Swal.fire(
@@ -97,9 +94,8 @@ pickWinner_btn.onclick = () => {
       do {
         winner = getRandomInt(peopleList.length)  //find winner based on: (math.random => array position)
       } while (peopleList[winner].isWinner); //skip if person already won
-      peopleList[winner].isWinner = true  //flag chosen winner
+      peopleList[winner].isWinner = availablePrizes  //flag chosen winner
       renderLastWinner(winner)  //display winner
-      // renderEveryWinner() //pendiente armar funcion
       winnersCounter++
       availablePrizes--
       updateCounter()
@@ -128,6 +124,7 @@ pickWinner_btn.onclick = () => {
 }
 
 //reset button
+const reset_btn = document.getElementById("reset-btn")
 reset_btn.onclick = () => {
   reset()
 } 
@@ -172,13 +169,6 @@ function pushPersonToPeopleList(object){
   updateCounter()
 }
 
-function pushPrizeToList(object){
-  const {id, name, picture} = object
-  const newPrize = new prize(id, name, picture)
-  prizeList.push(newPrize)
-  saveToLocalStorage('prizeList', prizeList)
-}
-
 function saveToLocalStorage(key, value){
   localStorage.setItem(key, JSON.stringify(value))
 }
@@ -188,13 +178,12 @@ function readFromLocalStorage(key){
   return dataFromLocalStorage
 }
 
-function readFromFile(filePath, option){
+function readFromFile(filePath){
   fetch(filePath)
   .then( (response) => response.json() )
   .then( (dataArray) => {
     for (const object of dataArray) {
-      if (option === 'peopleData') pushPersonToPeopleList(object)
-      if (option === 'prizeData')  pushPrizeToList(object)
+      pushPersonToPeopleList(object)
     }
     updateCounter()
   } )
