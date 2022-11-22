@@ -257,7 +257,9 @@ function renderWinners(){
     }).showToast();
     return
   }
-  winnerArray.sort((a, b) => a.isWinner > b.isWinner)
+  winnerArray.sort((a, b) => {
+    return (a.isWinner > b.isWinner ? 1 : -1)
+    } )
   winnerArray.forEach(winner => {
     const imgPath = `./img/prizes/${prizeList[winner.isWinner-1].picture}`
     const cardContainer = document.createElement("div")
